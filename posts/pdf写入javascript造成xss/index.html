@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  PDF写入javascript造成XSS · AFTERMORR0W
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://cdn.jsdelivr.net/; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="Get01d">
+<meta name="description" content="前言Link to heading前几天了解了PDF XSS 感觉这是个特别有意思的知识点，确实XSS称霸漏洞排行榜前几以来，哪个不知道见框就插，把代码写入点写死或者加上过滤你就没辙了
+介绍Link to headingPdf文件是应用广泛的一种文件格式，发展至今已经到了2.0版本，其功能也得到了不断丰富，很多鲜为人知的功能可能会被利用实施恶意行为。本文将简单介绍在pdf文件 中嵌入Javasript脚本的利用方式。
+很多针对Adobe阅读器的CVE漏洞都是通过pdf文件中的某些结构触发，触发过程都需要执行事先嵌入在pdf文件中的Javascript脚本
+主要的利用方式
+通过Javascript调用pdf中的模块进行攻击； 通过Javascript调用阅读器中提供的Javascript相关功能，进行攻击； 其他未知形式的攻击。 函数介绍Link to heading在pdf阅读器支持的所有Javascript函数中以下函数在实际应用中，还是可以对用户的使用造成一些困扰：
+app.launchURL()、app.media.getURLdata()、app.alert()、app.execDialog()、doc.getURL。 1、app.launchURL()函数功能为访问远程url。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后使用默认浏览器打开一个远程连接。 2、app.media.getURLdata()函数功能为打开url指定的多媒体文件。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后根据版本和应用不同 可能会有安全提示，随后需要用户手动选择信任，最终使用系统默认的播放器播放URL指定的文件。 3、app.alert()函数功能为弹出一个警示对话框。 4、app.execDialog()函数的功能为创建一个对话框。 5、doc.getURL函数功能为通过GET方法获取URL指向文件。
+利用方法Link to heading使用迅捷PDF编辑器，这个不需要注册会员，下下来直接用就好 先新建一个空白页面 再添加页面属性 添加javascript代码 这里需要注意的是：Adobe 支持自身的 JavaScript 对象模型，例如 alert(‘xss’)必须被 APP 对象调用，因此变成了 app.alert(‘xss’)。这意味着，利用 JavaScript 进行攻击时只能使用 Adobe 所支持的功能。 经过测试，目前火狐、谷歌、360、edge都支持 换言之，只要存在在线打开浏览文件的功能点就存在存储型XSS
+PDF中可以藏恶意代码了是不是可以将这个漏洞扩展一下
+参考链接： https://www.cnblogs.com/xiaozi/p/9951622.html">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PDF写入javascript造成XSS"/>
+<meta name="twitter:description" content="前言Link to heading前几天了解了PDF XSS 感觉这是个特别有意思的知识点，确实XSS称霸漏洞排行榜前几以来，哪个不知道见框就插，把代码写入点写死或者加上过滤你就没辙了
+介绍Link to headingPdf文件是应用广泛的一种文件格式，发展至今已经到了2.0版本，其功能也得到了不断丰富，很多鲜为人知的功能可能会被利用实施恶意行为。本文将简单介绍在pdf文件 中嵌入Javasript脚本的利用方式。
+很多针对Adobe阅读器的CVE漏洞都是通过pdf文件中的某些结构触发，触发过程都需要执行事先嵌入在pdf文件中的Javascript脚本
+主要的利用方式
+通过Javascript调用pdf中的模块进行攻击； 通过Javascript调用阅读器中提供的Javascript相关功能，进行攻击； 其他未知形式的攻击。 函数介绍Link to heading在pdf阅读器支持的所有Javascript函数中以下函数在实际应用中，还是可以对用户的使用造成一些困扰：
+app.launchURL()、app.media.getURLdata()、app.alert()、app.execDialog()、doc.getURL。 1、app.launchURL()函数功能为访问远程url。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后使用默认浏览器打开一个远程连接。 2、app.media.getURLdata()函数功能为打开url指定的多媒体文件。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后根据版本和应用不同 可能会有安全提示，随后需要用户手动选择信任，最终使用系统默认的播放器播放URL指定的文件。 3、app.alert()函数功能为弹出一个警示对话框。 4、app.execDialog()函数的功能为创建一个对话框。 5、doc.getURL函数功能为通过GET方法获取URL指向文件。
+利用方法Link to heading使用迅捷PDF编辑器，这个不需要注册会员，下下来直接用就好 先新建一个空白页面 再添加页面属性 添加javascript代码 这里需要注意的是：Adobe 支持自身的 JavaScript 对象模型，例如 alert(‘xss’)必须被 APP 对象调用，因此变成了 app.alert(‘xss’)。这意味着，利用 JavaScript 进行攻击时只能使用 Adobe 所支持的功能。 经过测试，目前火狐、谷歌、360、edge都支持 换言之，只要存在在线打开浏览文件的功能点就存在存储型XSS
+PDF中可以藏恶意代码了是不是可以将这个漏洞扩展一下
+参考链接： https://www.cnblogs.com/xiaozi/p/9951622.html"/>
+
+<meta property="og:title" content="PDF写入javascript造成XSS" />
+<meta property="og:description" content="前言Link to heading前几天了解了PDF XSS 感觉这是个特别有意思的知识点，确实XSS称霸漏洞排行榜前几以来，哪个不知道见框就插，把代码写入点写死或者加上过滤你就没辙了
+介绍Link to headingPdf文件是应用广泛的一种文件格式，发展至今已经到了2.0版本，其功能也得到了不断丰富，很多鲜为人知的功能可能会被利用实施恶意行为。本文将简单介绍在pdf文件 中嵌入Javasript脚本的利用方式。
+很多针对Adobe阅读器的CVE漏洞都是通过pdf文件中的某些结构触发，触发过程都需要执行事先嵌入在pdf文件中的Javascript脚本
+主要的利用方式
+通过Javascript调用pdf中的模块进行攻击； 通过Javascript调用阅读器中提供的Javascript相关功能，进行攻击； 其他未知形式的攻击。 函数介绍Link to heading在pdf阅读器支持的所有Javascript函数中以下函数在实际应用中，还是可以对用户的使用造成一些困扰：
+app.launchURL()、app.media.getURLdata()、app.alert()、app.execDialog()、doc.getURL。 1、app.launchURL()函数功能为访问远程url。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后使用默认浏览器打开一个远程连接。 2、app.media.getURLdata()函数功能为打开url指定的多媒体文件。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后根据版本和应用不同 可能会有安全提示，随后需要用户手动选择信任，最终使用系统默认的播放器播放URL指定的文件。 3、app.alert()函数功能为弹出一个警示对话框。 4、app.execDialog()函数的功能为创建一个对话框。 5、doc.getURL函数功能为通过GET方法获取URL指向文件。
+利用方法Link to heading使用迅捷PDF编辑器，这个不需要注册会员，下下来直接用就好 先新建一个空白页面 再添加页面属性 添加javascript代码 这里需要注意的是：Adobe 支持自身的 JavaScript 对象模型，例如 alert(‘xss’)必须被 APP 对象调用，因此变成了 app.alert(‘xss’)。这意味着，利用 JavaScript 进行攻击时只能使用 Adobe 所支持的功能。 经过测试，目前火狐、谷歌、360、edge都支持 换言之，只要存在在线打开浏览文件的功能点就存在存储型XSS
+PDF中可以藏恶意代码了是不是可以将这个漏洞扩展一下
+参考链接： https://www.cnblogs.com/xiaozi/p/9951622.html" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://AfterMorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-03T12:55:15+08:00" />
+<meta property="article:modified_time" content="2022-04-03T12:55:15+08:00" />
+
+
+
+
+
+<link rel="canonical" href="https://AfterMorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.c4d7e93a158eda5a65b3df343745d2092a0a1e2170feeec909b8a89443903c6a.css" integrity="sha256-xNfpOhWO2lpls980N0XSCSoKHiFw/u7JCbiolEOQPGo=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.39e41a7f16bdf8cb16e43cae7d714fa1016f1d2d2898a5b3f27f42c9979204e2.css" integrity="sha256-OeQafxa9&#43;MsW5DyufXFPoQFvHS0omKWz8n9CyZeSBOI=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.102.3" />
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      AFTERMORR0W
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="https://AfterMorr0w.github.io/pt-br/"></a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://AfterMorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/">
+              PDF写入javascript造成XSS
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-04-03T12:55:15&#43;08:00">
+                April 3, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa fa-user" aria-hidden="true"></i>
+    <a href="/authors/get01d/">Get01d</a></div>
+
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/%E6%B8%97%E9%80%8F/">渗透</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h1 id="前言">
+  前言
+  <a class="heading-link" href="#%e5%89%8d%e8%a8%80">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>前几天了解了PDF XSS 感觉这是个特别有意思的知识点，确实XSS称霸漏洞排行榜前几以来，哪个不知道见框就插，把代码写入点写死或者加上过滤你就没辙了</p>
+<h1 id="介绍">
+  介绍
+  <a class="heading-link" href="#%e4%bb%8b%e7%bb%8d">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Pdf文件是应用广泛的一种文件格式，发展至今已经到了2.0版本，其功能也得到了不断丰富，很多鲜为人知的功能可能会被利用实施恶意行为。本文将简单介绍在pdf文件
+中嵌入Javasript脚本的利用方式。</p>
+<p>很多针对Adobe阅读器的CVE漏洞都是通过pdf文件中的某些结构触发，触发过程都需要执行事先嵌入在pdf文件中的Javascript脚本</p>
+<p>主要的利用方式</p>
+<ul>
+<li>通过Javascript调用pdf中的模块进行攻击；</li>
+<li>通过Javascript调用阅读器中提供的Javascript相关功能，进行攻击；</li>
+<li>其他未知形式的攻击。</li>
+</ul>
+<h1 id="函数介绍">
+  函数介绍
+  <a class="heading-link" href="#%e5%87%bd%e6%95%b0%e4%bb%8b%e7%bb%8d">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>在pdf阅读器支持的所有Javascript函数中以下函数在实际应用中，还是可以对用户的使用造成一些困扰：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>app.launchURL()、app.media.getURLdata()、app.alert()、app.execDialog()、doc.getURL。
+</span></span></code></pre></div><p>1、app.launchURL()函数功能为访问远程url。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后使用默认浏览器打开一个远程连接。
+2、app.media.getURLdata()函数功能为打开url指定的多媒体文件。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后根据版本和应用不同
+可能会有安全提示，随后需要用户手动选择信任，最终使用系统默认的播放器播放URL指定的文件。
+3、app.alert()函数功能为弹出一个警示对话框。
+4、app.execDialog()函数的功能为创建一个对话框。
+5、doc.getURL函数功能为通过GET方法获取URL指向文件。</p>
+<h1 id="利用方法">
+  利用方法
+  <a class="heading-link" href="#%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>使用迅捷PDF编辑器，这个不需要注册会员，下下来直接用就好
+先新建一个空白页面
+<img src="./images/1654431015978.png" alt="enter description here">
+再添加页面属性
+<img src="./images/1654430957491.png" alt="enter description here"></p>
+<p>添加javascript代码
+<img src="./images/1654431125528.png" alt="enter description here"></p>
+<p>这里需要注意的是：Adobe 支持自身的 JavaScript 对象模型，例如 alert(‘xss’)必须被 APP 对象调用，因此变成了 app.alert(‘xss’)。这意味着，利用 
+JavaScript 进行攻击时只能使用 Adobe 所支持的功能。
+<img src="./images/1654431890417.png" alt="enter description here">
+经过测试，目前火狐、谷歌、360、edge都支持
+换言之，只要存在在线打开浏览文件的功能点就存在存储型XSS</p>
+<p>PDF中可以藏恶意代码了是不是可以将这个漏洞扩展一下</p>
+<p>参考链接：
+<a href="https://www.cnblogs.com/xiaozi/p/9951622.html">https://www.cnblogs.com/xiaozi/p/9951622.html</a></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2022
+     Get01d 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.236049395dc3682fb2719640872958e12f1f24067bb09c327b233e6290c7edac.js" integrity="sha256-I2BJOV3DaC&#43;ycZZAhylY4S8fJAZ7sJwyeyM&#43;YpDH7aw="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script data-goatcounter="https://code.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
