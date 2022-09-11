@@ -2,24 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on AFTERMORR0W</title>
-    <link>https://AfterMorr0w.github.io/posts/</link>
+    <link>https://aftermorr0w.github.io/posts/</link>
     <description>Recent content in Posts on AFTERMORR0W</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 Apr 2022 12:55:15 +0800</lastBuildDate><atom:link href="https://AfterMorr0w.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Apr 2022 12:55:15 +0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PDF写入javascript造成XSS</title>
-      <link>https://AfterMorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</link>
+      <link>https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</link>
       <pubDate>Sun, 03 Apr 2022 12:55:15 +0800</pubDate>
       
-      <guid>https://AfterMorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</guid>
+      <guid>https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</guid>
       <description>前言Link to heading前几天了解了PDF XSS 感觉这是个特别有意思的知识点，确实XSS称霸漏洞排行榜前几以来，哪个不知道见框就插，把代码写入点写死或者加上过滤你就没辙了
 介绍Link to headingPdf文件是应用广泛的一种文件格式，发展至今已经到了2.0版本，其功能也得到了不断丰富，很多鲜为人知的功能可能会被利用实施恶意行为。本文将简单介绍在pdf文件 中嵌入Javasript脚本的利用方式。
 很多针对Adobe阅读器的CVE漏洞都是通过pdf文件中的某些结构触发，触发过程都需要执行事先嵌入在pdf文件中的Javascript脚本
 主要的利用方式
 通过Javascript调用pdf中的模块进行攻击； 通过Javascript调用阅读器中提供的Javascript相关功能，进行攻击； 其他未知形式的攻击。 函数介绍Link to heading在pdf阅读器支持的所有Javascript函数中以下函数在实际应用中，还是可以对用户的使用造成一些困扰：
 app.launchURL()、app.media.getURLdata()、app.alert()、app.execDialog()、doc.getURL。 1、app.launchURL()函数功能为访问远程url。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后使用默认浏览器打开一个远程连接。 2、app.media.getURLdata()函数功能为打开url指定的多媒体文件。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后根据版本和应用不同 可能会有安全提示，随后需要用户手动选择信任，最终使用系统默认的播放器播放URL指定的文件。 3、app.alert()函数功能为弹出一个警示对话框。 4、app.execDialog()函数的功能为创建一个对话框。 5、doc.getURL函数功能为通过GET方法获取URL指向文件。
-利用方法Link to heading使用迅捷PDF编辑器，这个不需要注册会员，下下来直接用就好 先新建一个空白页面 再添加页面属性 添加javascript代码 这里需要注意的是：Adobe 支持自身的 JavaScript 对象模型，例如 alert(‘xss’)必须被 APP 对象调用，因此变成了 app.alert(‘xss’)。这意味着，利用 JavaScript 进行攻击时只能使用 Adobe 所支持的功能。 经过测试，目前火狐、谷歌、360、edge都支持 换言之，只要存在在线打开浏览文件的功能点就存在存储型XSS
+利用方法Link to heading使用迅捷PDF编辑器，这个不需要注册会员，下下来直接用就好 先新建一个空白页面
+再添加页面属性
+添加javascript代码
+这里需要注意的是：Adobe 支持自身的 JavaScript 对象模型，例如 alert(‘xss’)必须被 APP 对象调用，因此变成了 app.alert(‘xss’)。这意味着，利用 JavaScript 进行攻击时只能使用 Adobe 所支持的功能。
+经过测试，目前火狐、谷歌、360、edge都支持 换言之，只要存在在线打开浏览文件的功能点就存在存储型XSS
 PDF中可以藏恶意代码了是不是可以将这个漏洞扩展一下
 参考链接： https://www.cnblogs.com/xiaozi/p/9951622.html</description>
     </item>
