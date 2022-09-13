@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aftermorr0w.github.io/</loc>
-    <lastmod>2022-04-03T12:55:15+08:00</lastmod>
+    <lastmod>2022-09-13T19:52:48+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://aftermorr0w.github.io/authors/</loc>
-    <lastmod>2022-04-03T12:55:15+08:00</lastmod>
+    <lastmod>2022-09-13T19:52:48+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -29,16 +29,13 @@
                 />
   </url><url>
     <loc>https://aftermorr0w.github.io/authors/get01d/</loc>
-    <lastmod>2022-04-03T12:55:15+08:00</lastmod>
-  </url><url>
-    <loc>https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</loc>
-    <lastmod>2022-04-03T12:55:15+08:00</lastmod>
+    <lastmod>2022-09-13T19:52:48+08:00</lastmod>
   </url><url>
     <loc>https://aftermorr0w.github.io/posts/</loc>
-    <lastmod>2022-04-03T12:55:15+08:00</lastmod>
+    <lastmod>2022-09-13T19:52:48+08:00</lastmod>
   </url><url>
     <loc>https://aftermorr0w.github.io/tags/</loc>
-    <lastmod>2022-04-03T12:55:15+08:00</lastmod>
+    <lastmod>2022-09-13T19:52:48+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -50,7 +47,13 @@
                 href="https://aftermorr0w.github.io/tags/"
                 />
   </url><url>
+    <loc>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2022-09-13T19:52:48+08:00</lastmod>
+  </url><url>
     <loc>https://aftermorr0w.github.io/tags/%E6%B8%97%E9%80%8F/</loc>
+    <lastmod>2022-09-13T19:52:48+08:00</lastmod>
+  </url><url>
+    <loc>https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</loc>
     <lastmod>2022-04-03T12:55:15+08:00</lastmod>
   </url><url>
     <loc>https://aftermorr0w.github.io/about/</loc>

