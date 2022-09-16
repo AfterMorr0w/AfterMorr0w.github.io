@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>某羊玩法_爆破 - AFTERMORR0W</title><meta name="Description" content="Get01d &#39;s blog"><meta property="og:title" content="某羊玩法_爆破" />
+<meta property="og:description" content="环境 唯一的难点其实就是抓包的问题，你会发现新版微信小程序用burp suite抓会漏包 用Proxifier将流量全都转给burp suite就好" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aftermorr0w.github.io/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-16T08:33:53+08:00" />
+<meta property="article:modified_time" content="2022-09-16T08:33:53+08:00" /><meta property="og:site_name" content="AfterMorr0w" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="某羊玩法_爆破"/>
+<meta name="twitter:description" content="环境 唯一的难点其实就是抓包的问题，你会发现新版微信小程序用burp suite抓会漏包 用Proxifier将流量全都转给burp suite就好"/>
+<meta name="application-name" content="AfterMorr0w">
+<meta name="apple-mobile-web-app-title" content="AfterMorr0w"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://aftermorr0w.github.io/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/" /><link rel="prev" href="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "某羊玩法_爆破",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/aftermorr0w.github.io\/posts\/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4\/"
+        },"genre": "posts","wordcount":  307 ,
+        "url": "https:\/\/aftermorr0w.github.io\/posts\/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4\/","datePublished": "2022-09-16T08:33:53+08:00","dateModified": "2022-09-16T08:33:53+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "AfterMorr0w"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="AFTERMORR0W">AfterMorr0w</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 文章标签 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="AFTERMORR0W">AfterMorr0w</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">文章标签</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">某羊玩法_爆破</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>AfterMorr0w</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-16">2022-09-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 307 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><h1 id="环境">环境</h1>
+<p>唯一的难点其实就是抓包的问题，你会发现新版微信小程序用burp suite抓会漏包</p>
+<p>用Proxifier将流量全都转给burp suite就好了</p>
+<h1 id="配置">配置</h1>
+<p>打开Proxifier 代理本地burp suite的监听地址
+一般都是127.0.0.1 8080</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1663287323415.png"
+        data-srcset="/images/1663287323415.png, /images/1663287323415.png 1.5x, /images/1663287323415.png 2x"
+        data-sizes="auto"
+        alt="/images/1663287323415.png"
+        title="enter description here" /></p>
+<p>配置Proxifier代理服务器
+配置文件 =》 代理服务器 =》 地址设置
+和burp suite同步就好了</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1663287404385.png"
+        data-srcset="/images/1663287404385.png, /images/1663287404385.png 1.5x, /images/1663287404385.png 2x"
+        data-sizes="auto"
+        alt="/images/1663287404385.png"
+        title="enter description here" />
+然后开着burp suite 打开小程序就可以抓到包了
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1663287612483.png"
+        data-srcset="/images/1663287612483.png, /images/1663287612483.png 1.5x, /images/1663287612483.png 2x"
+        data-sizes="auto"
+        alt="/images/1663287612483.png"
+        title="enter description here" /></p>
+<p>一般 默认规则是可以的，如果抓不到的话再来修改
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1663287502860.png"
+        data-srcset="/images/1663287502860.png, /images/1663287502860.png 1.5x, /images/1663287502860.png 2x"
+        data-sizes="auto"
+        alt="/images/1663287502860.png"
+        title="enter description here" /></p>
+<h1 id="抓包爆破">抓包、爆破</h1>
+<p>开着代理 玩一把 然后第二关随便输掉就好了
+返回羊群 看burp suite抓包
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1663287931554.png"
+        data-srcset="/images/1663287931554.png, /images/1663287931554.png 1.5x, /images/1663287931554.png 2x"
+        data-sizes="auto"
+        alt="/images/1663287931554.png"
+        title="enter description here" /></p>
+<p>找到t：的参数 也就是token</p>
+<p>然后拼接到这个链接后边访问一次通关次数加一</p>
+<pre tabindex="0"><code>https://cat-match.easygame2021.com/sheep/v1/game/game_over?rank_score=1&amp;rank_state=1&amp;rank_time=238&amp;rank_role=2&amp;skin=34&amp;t=
+</code></pre><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1663288076298.png"
+        data-srcset="/images/1663288076298.png, /images/1663288076298.png 1.5x, /images/1663288076298.png 2x"
+        data-sizes="auto"
+        alt="/images/1663288076298.png"
+        title="enter description here" /></p>
+<p>丢了burp 里边 或者写个脚本</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1663288139550.png"
+        data-srcset="/images/1663288139550.png, /images/1663288139550.png 1.5x, /images/1663288139550.png 2x"
+        data-sizes="auto"
+        alt="/images/1663288139550.png"
+        title="enter description here" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1663288185901.png"
+        data-srcset="/images/1663288185901.png, /images/1663288185901.png 1.5x, /images/1663288185901.png 2x"
+        data-sizes="auto"
+        alt="/images/1663288185901.png"
+        title="enter description here" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1663288244495.png"
+        data-srcset="/images/1663288244495.png, /images/1663288244495.png 1.5x, /images/1663288244495.png 2x"
+        data-sizes="auto"
+        alt="/images/1663288244495.png"
+        title="enter description here" /></p>
+<p>加油 朋友圈最靓的崽</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-09-16</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://aftermorr0w.github.io/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/" data-title="某羊玩法_爆破"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://aftermorr0w.github.io/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://aftermorr0w.github.io/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/" data-title="某羊玩法_爆破"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://aftermorr0w.github.io/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/" data-title="某羊玩法_爆破"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://aftermorr0w.github.io/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/" data-title="某羊玩法_爆破" data-ralateuid="https://weibo.com/7770279120"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/" class="prev" rel="prev" title="对某傀儡机的提权操作"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>对某傀儡机的提权操作</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":30},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"Comment","lightTheme":"github-light","repo":"AfterMorr0w/AfterMorr0w.github.io"}}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

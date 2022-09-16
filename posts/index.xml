@@ -4,7 +4,15 @@
         <link>https://aftermorr0w.github.io/posts/</link>
         <description>所有文章 | AFTERMORR0W</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>get01d@hackerone.tech (AfterMorr0w)</managingEditor>
-            <webMaster>get01d@hackerone.tech (AfterMorr0w)</webMaster><lastBuildDate>Tue, 13 Sep 2022 19:52:48 &#43;0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>get01d@hackerone.tech (AfterMorr0w)</webMaster><lastBuildDate>Fri, 16 Sep 2022 08:33:53 &#43;0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>某羊玩法_爆破</title>
+    <link>https://aftermorr0w.github.io/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/</link>
+    <pubDate>Fri, 16 Sep 2022 08:33:53 &#43;0800</pubDate>
+    <author>AfterMorr0w</author>
+    <guid>https://aftermorr0w.github.io/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/</guid>
+    <description><![CDATA[环境 唯一的难点其实就是抓包的问题，你会发现新版微信小程序用burp suite抓会漏包 用Proxifier将流量全都转给burp suite就好]]></description>
+</item>
+<item>
     <title>对某傀儡机的提权操作</title>
     <link>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/</link>
     <pubDate>Tue, 13 Sep 2022 19:52:48 &#43;0800</pubDate>
