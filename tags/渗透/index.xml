@@ -4,7 +4,15 @@
         <link>https://aftermorr0w.github.io/tags/%E6%B8%97%E9%80%8F/</link>
         <description>渗透 - 标签 - AFTERMORR0W</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>get01d@hackerone.tech (AfterMorr0w)</managingEditor>
-            <webMaster>get01d@hackerone.tech (AfterMorr0w)</webMaster><lastBuildDate>Tue, 13 Sep 2022 19:52:48 &#43;0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/tags/%E6%B8%97%E9%80%8F/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>get01d@hackerone.tech (AfterMorr0w)</webMaster><lastBuildDate>Sat, 24 Sep 2022 19:07:44 &#43;0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/tags/%E6%B8%97%E9%80%8F/" rel="self" type="application/rss+xml" /><item>
+    <title>Ngrok后台启动_隐藏自己的C2</title>
+    <link>https://aftermorr0w.github.io/posts/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2/</link>
+    <pubDate>Sat, 24 Sep 2022 19:07:44 &#43;0800</pubDate>
+    <author>AfterMorr0w</author>
+    <guid>https://aftermorr0w.github.io/posts/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2/</guid>
+    <description><![CDATA[前言 这几天各类cobaltstrike的传闻风起云涌，而且因为我的不小心走失了我的马，导致我的c2服务器被杀毒厂商标记 当时慌得一批 好多乱七八]]></description>
+</item>
+<item>
     <title>对某傀儡机的提权操作</title>
     <link>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/</link>
     <pubDate>Tue, 13 Sep 2022 19:52:48 &#43;0800</pubDate>

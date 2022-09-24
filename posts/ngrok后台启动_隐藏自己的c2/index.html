@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Ngrok后台启动_隐藏自己的C2 - AFTERMORR0W</title><meta name="Description" content="Get01d &#39;s blog"><meta property="og:title" content="Ngrok后台启动_隐藏自己的C2" />
+<meta property="og:description" content="前言 这几天各类cobaltstrike的传闻风起云涌，而且因为我的不小心走失了我的马，导致我的c2服务器被杀毒厂商标记 当时慌得一批 好多乱七八" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aftermorr0w.github.io/posts/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-24T19:07:44+08:00" />
+<meta property="article:modified_time" content="2022-09-24T19:07:44+08:00" /><meta property="og:site_name" content="AfterMorr0w" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ngrok后台启动_隐藏自己的C2"/>
+<meta name="twitter:description" content="前言 这几天各类cobaltstrike的传闻风起云涌，而且因为我的不小心走失了我的马，导致我的c2服务器被杀毒厂商标记 当时慌得一批 好多乱七八"/>
+<meta name="application-name" content="AfterMorr0w">
+<meta name="apple-mobile-web-app-title" content="AfterMorr0w"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://aftermorr0w.github.io/posts/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2/" /><link rel="prev" href="https://aftermorr0w.github.io/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Ngrok后台启动_隐藏自己的C2",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/aftermorr0w.github.io\/posts\/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2\/"
+        },"genre": "posts","keywords": "渗透","wordcount":  478 ,
+        "url": "https:\/\/aftermorr0w.github.io\/posts\/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2\/","datePublished": "2022-09-24T19:07:44+08:00","dateModified": "2022-09-24T19:07:44+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "AfterMorr0w"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="AFTERMORR0W">AfterMorr0w</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 文章标签 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="AFTERMORR0W">AfterMorr0w</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">文章标签</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Ngrok后台启动_隐藏自己的C2</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>AfterMorr0w</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-24">2022-09-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 478 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><h1 id="前言">前言</h1>
+<p>这几天各类cobaltstrike的传闻风起云涌，而且因为我的不小心走失了我的马，导致我的c2服务器被杀毒厂商标记
+当时慌得一批 好多乱七八糟的上线了一大堆服务器</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1664016022194.png"
+        data-srcset="/images/1664016022194.png, /images/1664016022194.png 1.5x, /images/1664016022194.png 2x"
+        data-sizes="auto"
+        alt="/images/1664016022194.png"
+        title="enter description here" /></p>
+<p>真的，没有什么比保护好自己更重要的，所以本文记录一下自己隐藏上线ip的技巧</p>
+<h1 id="ngrok转发流量">ngrok转发流量</h1>
+<p><a href="https://k4chrs4fxb.feishu.cn/wiki/wikcnbLuCPxgwvEPukS1kMbuwMc" target="_blank" rel="noopener noreffer ">参考文章</a></p>
+<p>先去官网注册个账号，直接用github账号注册就好，省时省力
+<a href="https://ngrok.com/" target="_blank" rel="noopener noreffer ">ngrok官网</a></p>
+<p>下载相应版本的客户端
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1664016315838.png"
+        data-srcset="/images/1664016315838.png, /images/1664016315838.png 1.5x, /images/1664016315838.png 2x"
+        data-sizes="auto"
+        alt="/images/1664016315838.png"
+        title="enter description here" /></p>
+<p>vps一般就是第一个Linux的</p>
+<p>然后就跟着官方提示的步骤一步一步部署
+解压
+token连接账户
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1664016368898.png"
+        data-srcset="/images/1664016368898.png, /images/1664016368898.png 1.5x, /images/1664016368898.png 2x"
+        data-sizes="auto"
+        alt="/images/1664016368898.png"
+        title="enter description here" />
+然后赋予权限</p>
+<pre tabindex="0"><code>chmod +x ngrok
+</code></pre><p>转发端口</p>
+<pre tabindex="0"><code>./ngrok tcp 10088
+</code></pre><p>出现下边页面就算成功了
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1664016575892.png"
+        data-srcset="/images/1664016575892.png, /images/1664016575892.png 1.5x, /images/1664016575892.png 2x"
+        data-sizes="auto"
+        alt="/images/1664016575892.png"
+        title="enter description here" /></p>
+<h1 id="vps后台运行ngrok">vps后台运行ngrok</h1>
+<p>但是有个坑就是利用nohup &amp; 后台运行ngrok会失败</p>
+<p>需要安装screen
+RedHat系列的包管理工具是yum
+Debian系列的包管理工具是apt-get
+所以安装命令：</p>
+<pre tabindex="0"><code>yum install screen
+或
+apt-get install screen
+</code></pre><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1664015441570.png"
+        data-srcset="/images/1664015441570.png, /images/1664015441570.png 1.5x, /images/1664015441570.png 2x"
+        data-sizes="auto"
+        alt="/images/1664015441570.png"
+        title="enter description here" />
+安装成功之后运行</p>
+<pre tabindex="0"><code>screen -S ngrok
+</code></pre><p>会开启新的命令终端，而且可以内部运行 不会随着ssh连接的断开而关闭</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1664015453582.png"
+        data-srcset="/images/1664015453582.png, /images/1664015453582.png 1.5x, /images/1664015453582.png 2x"
+        data-sizes="auto"
+        alt="/images/1664015453582.png"
+        title="enter description here" />
+在新的终端运行ngrok
+然后</p>
+<pre tabindex="0"><code>ctrl + A + D
+</code></pre><p>保持ngrok后台运行</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1664017131225.png"
+        data-srcset="/images/1664017131225.png, /images/1664017131225.png 1.5x, /images/1664017131225.png 2x"
+        data-sizes="auto"
+        alt="/images/1664017131225.png"
+        title="enter description here" /></p>
+<h1 id="cs-listeners配置">CS listeners配置</h1>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1664017240646.png"
+        data-srcset="/images/1664017240646.png, /images/1664017240646.png 1.5x, /images/1664017240646.png 2x"
+        data-sizes="auto"
+        alt="/images/1664017240646.png"
+        title="enter description here" /></p>
+<p>这里的端口port对应ngrok的端口</p>
+<p>port(bind)对应vps的监听端口</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-09-24</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://aftermorr0w.github.io/posts/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2/" data-title="Ngrok后台启动_隐藏自己的C2" data-hashtags="渗透"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://aftermorr0w.github.io/posts/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2/" data-hashtag="渗透"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://aftermorr0w.github.io/posts/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2/" data-title="Ngrok后台启动_隐藏自己的C2"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://aftermorr0w.github.io/posts/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2/" data-title="Ngrok后台启动_隐藏自己的C2"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://aftermorr0w.github.io/posts/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2/" data-title="Ngrok后台启动_隐藏自己的C2" data-ralateuid="https://weibo.com/7770279120"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%97%E9%80%8F/">渗透</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/" class="prev" rel="prev" title="某羊玩法_爆破"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>某羊玩法_爆破</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":30},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"Comment","lightTheme":"github-light","repo":"AfterMorr0w/AfterMorr0w.github.io"}}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
