@@ -4,7 +4,15 @@
         <link>https://aftermorr0w.github.io/posts/</link>
         <description>所有文章 | AFTERMORR0W</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>get01d@hackerone.tech (行川)</managingEditor>
-            <webMaster>get01d@hackerone.tech (行川)</webMaster><lastBuildDate>Tue, 27 Sep 2022 14:49:43 &#43;0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>get01d@hackerone.tech (行川)</webMaster><lastBuildDate>Fri, 30 Sep 2022 10:26:40 &#43;0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>国外frp站点白嫖</title>
+    <link>https://aftermorr0w.github.io/posts/%E5%9B%BD%E5%A4%96frp%E7%AB%99%E7%82%B9%E7%99%BD%E5%AB%96/</link>
+    <pubDate>Fri, 30 Sep 2022 10:26:40 &#43;0800</pubDate>
+    <author>行川</author>
+    <guid>https://aftermorr0w.github.io/posts/%E5%9B%BD%E5%A4%96frp%E7%AB%99%E7%82%B9%E7%99%BD%E5%AB%96/</guid>
+    <description><![CDATA[前言 这两天正因为C2服务器隐藏的问题发愁， 之前一篇文章文章链接讲的用Ngrok转发端口的办法发现不是很好用，tcp流量转发三个小时就会自动给]]></description>
+</item>
+<item>
     <title>CVE-2022-39197(CobaltStrike XSS =4.7)</title>
     <link>https://aftermorr0w.github.io/posts/cve-2022-39197cobaltstrike-xss-4.7/</link>
     <pubDate>Tue, 27 Sep 2022 14:49:43 &#43;0800</pubDate>
