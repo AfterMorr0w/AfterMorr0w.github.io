@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>木马(python)反沙箱 - AFTERMORR0W</title><meta name="Description" content="Get01d &#39;s blog"><meta property="og:title" content="木马(python)反沙箱" />
+<meta property="og:description" content="前言 完成免杀任务之后迅速上线了异国的网站，开启了这次木马的钓鱼生涯 但是这种被丢到沙箱里 然后给你上线一大堆没用的虚拟机 把你的远控搞得一团乱糟糟" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aftermorr0w.github.io/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-12T17:12:39+08:00" />
+<meta property="article:modified_time" content="2022-10-12T17:12:39+08:00" /><meta property="og:site_name" content="AfterMorr0w" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="木马(python)反沙箱"/>
+<meta name="twitter:description" content="前言 完成免杀任务之后迅速上线了异国的网站，开启了这次木马的钓鱼生涯 但是这种被丢到沙箱里 然后给你上线一大堆没用的虚拟机 把你的远控搞得一团乱糟糟"/>
+<meta name="application-name" content="AfterMorr0w">
+<meta name="apple-mobile-web-app-title" content="AfterMorr0w"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://aftermorr0w.github.io/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/" /><link rel="prev" href="https://aftermorr0w.github.io/posts/%E5%9B%BD%E5%A4%96frp%E7%AB%99%E7%82%B9%E7%99%BD%E5%AB%96/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "木马(python)反沙箱",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/aftermorr0w.github.io\/posts\/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1\/"
+        },"genre": "posts","keywords": "木马病毒","wordcount":  957 ,
+        "url": "https:\/\/aftermorr0w.github.io\/posts\/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1\/","datePublished": "2022-10-12T17:12:39+08:00","dateModified": "2022-10-12T17:12:39+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "行川"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="AFTERMORR0W">AfterMorr0w</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 文章标签 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="AFTERMORR0W">AfterMorr0w</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">文章标签</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">木马(python)反沙箱</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>行川</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-10-12">2022-10-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 957 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#开机时间检测">开机时间检测</a></li>
+        <li><a href="#检测cpu核心数">检测CPU核心数</a></li>
+        <li><a href="#检测临时文件数">检测临时文件数</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="前言">前言</h1>
+<p>完成免杀任务之后迅速上线了异国的网站，开启了这次木马的钓鱼生涯
+但是这种被丢到沙箱里 然后给你上线一大堆没用的虚拟机
+把你的远控搞得一团乱糟糟不说 还容易增加你shellcode被暴露的风险</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1665541728384.png"
+        data-srcset="/images/1665541728384.png, /images/1665541728384.png 1.5x, /images/1665541728384.png 2x"
+        data-sizes="auto"
+        alt="/images/1665541728384.png"
+        title="/images/1665541728384.png" /></p>
+<h1 id="反沙箱虚拟机操作">反沙箱虚拟机操作</h1>
+<p>习惯用python我就用python 写了
+而且我只挑了几个我认为准确率比较高的方法</p>
+<h3 id="开机时间检测">开机时间检测</h3>
+<p>沙箱检测木马文件一般都是运行完就关机的，所以可以根据开机时间来判断是不是真实的运行状况</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 开机时间长短来判断是否是沙箱虚拟机</span>
+</span></span><span style="display:flex;"><span>boot_time <span style="color:#f92672">=</span> psutil<span style="color:#f92672">.</span>boot_time()
+</span></span><span style="display:flex;"><span>boot_time_obj <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>fromtimestamp(boot_time)
+</span></span><span style="display:flex;"><span>h <span style="color:#f92672">=</span> boot_time_obj<span style="color:#f92672">.</span>hour
+</span></span><span style="display:flex;"><span>m <span style="color:#f92672">=</span> boot_time_obj<span style="color:#f92672">.</span>minute
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> boot_time_obj<span style="color:#f92672">.</span>second
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> int(h)<span style="color:#f92672">*</span><span style="color:#ae81ff">3600</span> <span style="color:#f92672">+</span> int(m)<span style="color:#f92672">*</span><span style="color:#ae81ff">60</span> <span style="color:#f92672">+</span> int(s)
+</span></span><span style="display:flex;"><span>now_time <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>now()
+</span></span><span style="display:flex;"><span>h <span style="color:#f92672">=</span> now_time<span style="color:#f92672">.</span>hour
+</span></span><span style="display:flex;"><span>m <span style="color:#f92672">=</span> now_time<span style="color:#f92672">.</span>minute
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> now_time<span style="color:#f92672">.</span>second
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> int(h)<span style="color:#f92672">*</span><span style="color:#ae81ff">3600</span> <span style="color:#f92672">+</span> int(m)<span style="color:#f92672">*</span><span style="color:#ae81ff">60</span> <span style="color:#f92672">+</span> int(s)
+</span></span><span style="display:flex;"><span>running_time <span style="color:#f92672">=</span> a <span style="color:#f92672">-</span> b
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> running_time <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">600</span>:
+</span></span><span style="display:flex;"><span>    tkinter<span style="color:#f92672">.</span>messagebox<span style="color:#f92672">.</span>showinfo(<span style="color:#e6db74">&#39;Windows提示&#39;</span>, <span style="color:#e6db74">&#39;开机运行时间正常显示&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:tkinter<span style="color:#f92672">.</span>messagebox<span style="color:#f92672">.</span>showerror(<span style="color:#e6db74">&#39;Windows提示&#39;</span>, <span style="color:#e6db74">&#39;检测到运行环境为虚拟机&#39;</span>)
+</span></span></code></pre></div><p>这里是与600秒作比较，也就是判断机器是否运行超过10分钟</p>
+<p>正常机器运行</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1665557689502.png"
+        data-srcset="/images/1665557689502.png, /images/1665557689502.png 1.5x, /images/1665557689502.png 2x"
+        data-sizes="auto"
+        alt="/images/1665557689502.png"
+        title="/images/1665557689502.png" /></p>
+<p>虚拟机运行</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1665558144759.png"
+        data-srcset="/images/1665558144759.png, /images/1665558144759.png 1.5x, /images/1665558144759.png 2x"
+        data-sizes="auto"
+        alt="/images/1665558144759.png"
+        title="/images/1665558144759.png" /></p>
+<h3 id="检测cpu核心数">检测CPU核心数</h3>
+<p>大多数pc拥有4核心cpu，许多在线检测的虚拟机沙盘是2核心，我们可以通过核心数来判断是否为真实机器或检测用的虚拟沙箱。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#75715e">#检测CPU核心数</span>
+</span></span><span style="display:flex;"><span>    num_cpu <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>cpu_count()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> num_cpu <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>:
+</span></span><span style="display:flex;"><span>        tkinter<span style="color:#f92672">.</span>messagebox<span style="color:#f92672">.</span>showinfo(<span style="color:#e6db74">&#39;Windows提示&#39;</span>, <span style="color:#e6db74">&#39;正常客户端运行&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:tkinter<span style="color:#f92672">.</span>messagebox<span style="color:#f92672">.</span>showerror(<span style="color:#e6db74">&#39;Windows提示&#39;</span>, <span style="color:#e6db74">&#39;检测到运行环境为虚拟机&#39;</span>)
+</span></span></code></pre></div><h3 id="检测临时文件数">检测临时文件数</h3>
+<p>正常使用的系统，其中用户的临时文件夹中有一定数量的临时文件，可以通过判断临时文件夹内的文件数量来检测是否在沙箱中运行。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>        <span style="color:#75715e">#检测系统临时文件的数量</span>
+</span></span><span style="display:flex;"><span>        path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:\Windows\Temp&#39;</span>
+</span></span><span style="display:flex;"><span>        files <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>listdir(path)
+</span></span><span style="display:flex;"><span>        fold_num <span style="color:#f92672">=</span> len(files)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> fold_num <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span>:
+</span></span><span style="display:flex;"><span>            tkinter<span style="color:#f92672">.</span>messagebox<span style="color:#f92672">.</span>showinfo(<span style="color:#e6db74">&#39;Windows提示&#39;</span>, <span style="color:#e6db74">&#39;正常客户端运行&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:tkinter<span style="color:#f92672">.</span>messagebox<span style="color:#f92672">.</span>showerror(<span style="color:#e6db74">&#39;Windows提示&#39;</span>, <span style="color:#e6db74">&#39;检测到运行环境为虚拟机&#39;</span>)
+</span></span></code></pre></div><p>传到沙箱看一下</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1665563489878.png"
+        data-srcset="/images/1665563489878.png, /images/1665563489878.png 1.5x, /images/1665563489878.png 2x"
+        data-sizes="auto"
+        alt="/images/1665563489878.png"
+        title="/images/1665563489878.png" />
+检测临时文件数的时候报了个高风险，可以换个写法或者直接直接用计算temp文件夹大小来替代目录遍历</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-10-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://aftermorr0w.github.io/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/" data-title="木马(python)反沙箱" data-hashtags="木马病毒"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://aftermorr0w.github.io/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/" data-hashtag="木马病毒"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://aftermorr0w.github.io/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/" data-title="木马(python)反沙箱"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://aftermorr0w.github.io/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/" data-title="木马(python)反沙箱"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://aftermorr0w.github.io/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/" data-title="木马(python)反沙箱" data-ralateuid="7770279120"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%9C%A8%E9%A9%AC%E7%97%85%E6%AF%92/">木马病毒</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E5%9B%BD%E5%A4%96frp%E7%AB%99%E7%82%B9%E7%99%BD%E5%AB%96/" class="prev" rel="prev" title="国外frp站点白嫖"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>国外frp站点白嫖</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":30},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"Comment","lightTheme":"github-light","repo":"AfterMorr0w/AfterMorr0w.github.io"}}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
