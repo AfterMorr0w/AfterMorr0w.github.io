@@ -77,10 +77,17 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><h1 id="前言">前言</h1>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#函数介绍">函数介绍</a></li>
+    <li><a href="#利用方法">利用方法</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
 <p>前几天了解了PDF XSS 感觉这是个特别有意思的知识点，确实XSS称霸漏洞排行榜前几以来，哪个不知道见框就插，把代码写入点写死或者加上过滤你就没辙了</p>
-<h1 id="介绍">介绍</h1>
+<h2 id="介绍">介绍</h2>
 <p>Pdf文件是应用广泛的一种文件格式，发展至今已经到了2.0版本，其功能也得到了不断丰富，很多鲜为人知的功能可能会被利用实施恶意行为。本文将简单介绍在pdf文件
 中嵌入Javasript脚本的利用方式。</p>
 <p>很多针对Adobe阅读器的CVE漏洞都是通过pdf文件中的某些结构触发，触发过程都需要执行事先嵌入在pdf文件中的Javascript脚本</p>
@@ -90,7 +97,7 @@
 <li>通过Javascript调用阅读器中提供的Javascript相关功能，进行攻击；</li>
 <li>其他未知形式的攻击。</li>
 </ul>
-<h1 id="函数介绍">函数介绍</h1>
+<h2 id="函数介绍">函数介绍</h2>
 <p>在pdf阅读器支持的所有Javascript函数中以下函数在实际应用中，还是可以对用户的使用造成一些困扰：</p>
 <pre tabindex="0"><code>app.launchURL()、app.media.getURLdata()、app.alert()、app.execDialog()、doc.getURL。
 </code></pre><p>1、app.launchURL()函数功能为访问远程url。当打开包含该函数的pdf文件时，首先会弹出窗口提醒用户建立远程链接，随后使用默认浏览器打开一个远程连接。
@@ -99,7 +106,7 @@
 3、app.alert()函数功能为弹出一个警示对话框。
 4、app.execDialog()函数的功能为创建一个对话框。
 5、doc.getURL函数功能为通过GET方法获取URL指向文件。</p>
-<h1 id="利用方法">利用方法</h1>
+<h2 id="利用方法">利用方法</h2>
 <p>使用迅捷PDF编辑器，这个不需要注册会员，下下来直接用就好
 先新建一个空白页面</p>
 <p><img

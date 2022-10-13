@@ -77,8 +77,15 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><h1 id="前言">前言</h1>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#ngrok转发流量">ngrok转发流量</a></li>
+    <li><a href="#vps后台运行ngrok">vps后台运行ngrok</a></li>
+    <li><a href="#cs-listeners配置">CS listeners配置</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
 <p>这几天各类cobaltstrike的传闻风起云涌，而且因为我的不小心走失了我的马，导致我的c2服务器被杀毒厂商标记
 当时慌得一批 好多乱七八糟的上线了一大堆服务器</p>
 <p><img
@@ -90,7 +97,7 @@
         alt="/images/1664016022194.png"
         title="enter description here" /></p>
 <p>真的，没有什么比保护好自己更重要的，所以本文记录一下自己隐藏上线ip的技巧</p>
-<h1 id="ngrok转发流量">ngrok转发流量</h1>
+<h2 id="ngrok转发流量">ngrok转发流量</h2>
 <p><a href="https://k4chrs4fxb.feishu.cn/wiki/wikcnbLuCPxgwvEPukS1kMbuwMc" target="_blank" rel="noopener noreffer ">参考文章</a></p>
 <p>先去官网注册个账号，直接用github账号注册就好，省时省力
 <a href="https://ngrok.com/" target="_blank" rel="noopener noreffer ">ngrok官网</a></p>
@@ -128,7 +135,7 @@ token连接账户
         data-sizes="auto"
         alt="/images/1664016575892.png"
         title="enter description here" /></p>
-<h1 id="vps后台运行ngrok">vps后台运行ngrok</h1>
+<h2 id="vps后台运行ngrok">vps后台运行ngrok</h2>
 <p>但是有个坑就是利用nohup &amp; 后台运行ngrok会失败</p>
 <p>需要安装screen
 RedHat系列的包管理工具是yum
@@ -168,7 +175,7 @@ apt-get install screen
         data-sizes="auto"
         alt="/images/1664017131225.png"
         title="enter description here" /></p>
-<h1 id="cs-listeners配置">CS listeners配置</h1>
+<h2 id="cs-listeners配置">CS listeners配置</h2>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
