@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>对某远控软件的破解利用 - AFTERMORR0W</title><meta name="Description" content="Get01d &#39;s blog"><meta property="og:title" content="对某远控软件的破解利用" />
+<meta property="og:description" content="前言： 为了和朋友一起学习 把之前坛子里的发过的文章发到这里 意外得到了一个安卓远控软件，感觉很好用的样子，正欣喜若狂，才发现是个体验版的，只能生" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E8%BF%9C%E6%8E%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%88%A9%E7%94%A8/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-26T14:10:26+08:00" />
+<meta property="article:modified_time" content="2022-10-26T14:10:26+08:00" /><meta property="og:site_name" content="AfterMorr0w" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="对某远控软件的破解利用"/>
+<meta name="twitter:description" content="前言： 为了和朋友一起学习 把之前坛子里的发过的文章发到这里 意外得到了一个安卓远控软件，感觉很好用的样子，正欣喜若狂，才发现是个体验版的，只能生"/>
+<meta name="application-name" content="AfterMorr0w">
+<meta name="apple-mobile-web-app-title" content="AfterMorr0w"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E8%BF%9C%E6%8E%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%88%A9%E7%94%A8/" /><link rel="prev" href="https://aftermorr0w.github.io/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "对某远控软件的破解利用",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/aftermorr0w.github.io\/posts\/%E5%AF%B9%E6%9F%90%E8%BF%9C%E6%8E%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%88%A9%E7%94%A8\/"
+        },"genre": "posts","keywords": "渗透","wordcount":  885 ,
+        "url": "https:\/\/aftermorr0w.github.io\/posts\/%E5%AF%B9%E6%9F%90%E8%BF%9C%E6%8E%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%88%A9%E7%94%A8\/","datePublished": "2022-10-26T14:10:26+08:00","dateModified": "2022-10-26T14:10:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "后来的后来"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="AFTERMORR0W">AfterMorr0w</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 文章标签 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="AFTERMORR0W">AfterMorr0w</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">文章标签</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">对某远控软件的破解利用</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>后来的后来</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-10-26">2022-10-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 885 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言：</a></li>
+    <li><a href="#准备阶段">准备阶段</a></li>
+    <li><a href="#01对生成的apk马进行反编译">01对生成的apk马进行反编译</a></li>
+    <li><a href="#02反编译smali并修改">02反编译smali并修改</a></li>
+    <li><a href="#03回遍">03回遍</a></li>
+    <li><a href="#04签名">04签名</a></li>
+    <li><a href="#05本地上线测试">05本地上线测试</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言：</h2>
+<p>为了和朋友一起学习 把之前坛子里的发过的文章发到这里</p>
+<p>意外得到了一个安卓远控软件，感觉很好用的样子，正欣喜若狂，才发现是个体验版的，只能生成固定内网ip的apk，本着能改就改的原则，决定对生成的apk进行修改，让其回连到我们指定的ip和端口，当然对此远控的操作纯属为了技术的实践。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/22030621582a5ed774fd7c9cc3.png"
+        data-srcset="/images/22030621582a5ed774fd7c9cc3.png, /images/22030621582a5ed774fd7c9cc3.png 1.5x, /images/22030621582a5ed774fd7c9cc3.png 2x"
+        data-sizes="auto"
+        alt="/images/22030621582a5ed774fd7c9cc3.png"
+        title="enter description here" /></p>
+<h2 id="准备阶段">准备阶段</h2>
+<pre tabindex="0"><code>dex2jar-2.1
+frida-dexdump-2.0.1
+jd-gui-windows-1.6.6
+apktool
+雷电模拟器
+</code></pre><h2 id="01对生成的apk马进行反编译">01对生成的apk马进行反编译</h2>
+<p>APK是Android Package的缩写，即Android安装包，APK文件的后缀为．apk，但是其格式是压缩文件zip的格式。直接将该文件扩展名改为．zip就可以解压该文件来了解APK文件的结构。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/2203062159409a7407b5ab40ee.png"
+        data-srcset="/images/2203062159409a7407b5ab40ee.png, /images/2203062159409a7407b5ab40ee.png 1.5x, /images/2203062159409a7407b5ab40ee.png 2x"
+        data-sizes="auto"
+        alt="/images/2203062159409a7407b5ab40ee.png"
+        title="enter description here" /></p>
+<p>解压apk文件得到dex文件，然后使用dex2jar工具包中的d2j-dex2jar.bat将dex转为jar文件：</p>
+<pre tabindex="0"><code>d2j-dex2jar.bat classes.dex
+</code></pre><p>将生成的classes-dex2jar.jar用jd-gui打开，并找到填写ip和端口的位置：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/2203062201b176e44dcd776f4e.png"
+        data-srcset="/images/2203062201b176e44dcd776f4e.png, /images/2203062201b176e44dcd776f4e.png 1.5x, /images/2203062201b176e44dcd776f4e.png 2x"
+        data-sizes="auto"
+        alt="/images/2203062201b176e44dcd776f4e.png"
+        title="enter description here" /></p>
+<p>在这里我们获得了我们想要修改的信息的位置</p>
+<p>但是jar文件只能辅助我们查看java代码，无法修改。想要修改的话，还是要反编译出smali文件，然后对smali文件进行修改操作</p>
+<h2 id="02反编译smali并修改">02反编译smali并修改</h2>
+<p>smali：存放Java编译成的smali代码，smali相当于Android虚拟机上运行的语言。</p>
+<pre tabindex="0"><code>apktool d /root/桌面/192.168.1.199.apk
+</code></pre><p>从得到的smali文件中找到存放ip和端口配置的地方：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/2203062202d6be1c90ce42f675.png"
+        data-srcset="/images/2203062202d6be1c90ce42f675.png, /images/2203062202d6be1c90ce42f675.png 1.5x, /images/2203062202d6be1c90ce42f675.png 2x"
+        data-sizes="auto"
+        alt="/images/2203062202d6be1c90ce42f675.png"
+        title="enter description here" /></p>
+<p><strong>ctrl+f</strong>搜索出ip和端口的位置替换成远控所在的Ip和开放端口，
+这里是因为数字特征容易搜索，最好是懂一些
+安利这篇文章学习一下smali语法：http://www.manongjc.com/detail/25-iskhhheegxpglgf.html</p>
+<h2 id="03回遍">03回遍</h2>
+<pre tabindex="0"><code>apktool b /root/桌面/192.168.1.199
+</code></pre><p>这样的之后在/root/桌面/192.168.1.199/dist/下会生成修改之后的apk</p>
+<h2 id="04签名">04签名</h2>
+<p>这样我们的app添加就算完成了，但是在手机是无法运行的。因为没有签名。</p>
+<pre tabindex="0"><code>keytool -genkey -v -keystore mykey.keystore -alias alias_name -keyalg RSA -keysize 1024 -validity 22222
+</code></pre><p>需要输入密钥，其他的随便就好</p>
+<pre tabindex="0"><code>jarsigner -keystore mykey.keystore 192.168.1.199.apk alias_name
+</code></pre><h2 id="05本地上线测试">05本地上线测试</h2>
+<p>上线成功！这款远控能用的功能还是可以的，也不枉我一番折腾。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/2203062203eb7c12f2b23a4ca5.png"
+        data-srcset="/images/2203062203eb7c12f2b23a4ca5.png, /images/2203062203eb7c12f2b23a4ca5.png 1.5x, /images/2203062203eb7c12f2b23a4ca5.png 2x"
+        data-sizes="auto"
+        alt="/images/2203062203eb7c12f2b23a4ca5.png"
+        title="enter description here" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/2203062204ef6c42d4b54b8fb0.png"
+        data-srcset="/images/2203062204ef6c42d4b54b8fb0.png, /images/2203062204ef6c42d4b54b8fb0.png 1.5x, /images/2203062204ef6c42d4b54b8fb0.png 2x"
+        data-sizes="auto"
+        alt="/images/2203062204ef6c42d4b54b8fb0.png"
+        title="enter description here" /></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-10-26</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E8%BF%9C%E6%8E%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%88%A9%E7%94%A8/" data-title="对某远控软件的破解利用" data-hashtags="渗透"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E8%BF%9C%E6%8E%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%88%A9%E7%94%A8/" data-hashtag="渗透"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E8%BF%9C%E6%8E%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%88%A9%E7%94%A8/" data-title="对某远控软件的破解利用"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E8%BF%9C%E6%8E%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%88%A9%E7%94%A8/" data-title="对某远控软件的破解利用"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E8%BF%9C%E6%8E%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%88%A9%E7%94%A8/" data-title="对某远控软件的破解利用" data-ralateuid="7770279120"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E6%B8%97%E9%80%8F/">渗透</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/" class="prev" rel="prev" title="木马(python)反沙箱"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>木马(python)反沙箱</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":30},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"Comment","lightTheme":"github-light","repo":"AfterMorr0w/AfterMorr0w.github.io"}}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
