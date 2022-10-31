@@ -3,14 +3,14 @@
         <title>AFTERMORR0W</title>
         <link>https://aftermorr0w.github.io/</link>
         <description>Get01d &#39;s blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>get01d@hackerone.tech (刘悦东)</managingEditor>
-            <webMaster>get01d@hackerone.tech (刘悦东)</webMaster><lastBuildDate>Mon, 31 Oct 2022 08:53:46 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>get01d@hackerone.tech (七兵堂)</managingEditor>
+            <webMaster>get01d@hackerone.tech (七兵堂)</webMaster><lastBuildDate>Mon, 31 Oct 2022 08:53:46 &#43;0800</lastBuildDate>
             <atom:link href="https://aftermorr0w.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Windows使用wsl安装linux子系统</title>
     <link>https://aftermorr0w.github.io/posts/windows%E4%BD%BF%E7%94%A8wsl%E5%AE%89%E8%A3%85linux%E5%AD%90%E7%B3%BB%E7%BB%9F/</link>
     <pubDate>Mon, 31 Oct 2022 08:53:46 &#43;0800</pubDate>
-    <author>刘悦东</author>
+    <author>七兵堂</author>
     <guid>https://aftermorr0w.github.io/posts/windows%E4%BD%BF%E7%94%A8wsl%E5%AE%89%E8%A3%85linux%E5%AD%90%E7%B3%BB%E7%BB%9F/</guid>
     <description><![CDATA[安装步骤 首先我们需要先安装wsl wsl --install 直接用cmd或者powershell操作就行 安装成功后查看子系统的linux发行版有哪些 wsl --list --online 我们选择下]]></description>
 </item>
@@ -18,7 +18,7 @@
     <title>对某远控软件的破解利用</title>
     <link>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E8%BF%9C%E6%8E%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%88%A9%E7%94%A8/</link>
     <pubDate>Wed, 26 Oct 2022 14:10:26 &#43;0800</pubDate>
-    <author>刘悦东</author>
+    <author>七兵堂</author>
     <guid>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E8%BF%9C%E6%8E%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%A0%B4%E8%A7%A3%E5%88%A9%E7%94%A8/</guid>
     <description><![CDATA[前言： 为了和朋友一起学习 把之前坛子里的发过的文章发到这里 意外得到了一个安卓远控软件，感觉很好用的样子，正欣喜若狂，才发现是个体验版的，只能生]]></description>
 </item>
@@ -26,7 +26,7 @@
     <title>木马(python)反沙箱</title>
     <link>https://aftermorr0w.github.io/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/</link>
     <pubDate>Wed, 12 Oct 2022 17:12:39 &#43;0800</pubDate>
-    <author>刘悦东</author>
+    <author>七兵堂</author>
     <guid>https://aftermorr0w.github.io/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/</guid>
     <description><![CDATA[前言 完成免杀任务之后迅速上线了异国的网站，开启了这次木马的钓鱼生涯 但是这种被丢到沙箱里 然后给你上线一大堆没用的虚拟机 把你的远控搞得一团乱糟糟]]></description>
 </item>
@@ -34,7 +34,7 @@
     <title>国外frp站点白嫖</title>
     <link>https://aftermorr0w.github.io/posts/%E5%9B%BD%E5%A4%96frp%E7%AB%99%E7%82%B9%E7%99%BD%E5%AB%96/</link>
     <pubDate>Fri, 30 Sep 2022 10:26:40 &#43;0800</pubDate>
-    <author>刘悦东</author>
+    <author>七兵堂</author>
     <guid>https://aftermorr0w.github.io/posts/%E5%9B%BD%E5%A4%96frp%E7%AB%99%E7%82%B9%E7%99%BD%E5%AB%96/</guid>
     <description><![CDATA[前言 这两天正因为C2服务器隐藏的问题发愁， 之前一篇文章文章链接讲的用Ngrok转发端口的办法发现不是很好用，tcp流量转发三个小时就会自动给]]></description>
 </item>
@@ -42,7 +42,7 @@
     <title>CVE-2022-39197(CobaltStrike XSS =4.7)</title>
     <link>https://aftermorr0w.github.io/posts/cve-2022-39197cobaltstrike-xss-4.7/</link>
     <pubDate>Tue, 27 Sep 2022 14:49:43 &#43;0800</pubDate>
-    <author>刘悦东</author>
+    <author>七兵堂</author>
     <guid>https://aftermorr0w.github.io/posts/cve-2022-39197cobaltstrike-xss-4.7/</guid>
     <description><![CDATA[前言 最先是在某群里得到的消息，当时很后怕，因为近期我的木马频繁被传进沙箱里分析，还好马上在外网上就找到了相关的介绍还有一些项目地址 CS官方通]]></description>
 </item>
@@ -50,7 +50,7 @@
     <title>Ngrok后台启动_隐藏自己的C2</title>
     <link>https://aftermorr0w.github.io/posts/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2/</link>
     <pubDate>Sat, 24 Sep 2022 19:07:44 &#43;0800</pubDate>
-    <author>刘悦东</author>
+    <author>七兵堂</author>
     <guid>https://aftermorr0w.github.io/posts/ngrok%E5%90%8E%E5%8F%B0%E5%90%AF%E5%8A%A8_%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84c2/</guid>
     <description><![CDATA[前言 这几天各类cobaltstrike的传闻风起云涌，而且因为我的不小心走失了我的马，导致我的c2服务器被杀毒厂商标记 当时慌得一批 好多乱七八]]></description>
 </item>
@@ -58,7 +58,7 @@
     <title>某羊玩法_爆破</title>
     <link>https://aftermorr0w.github.io/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/</link>
     <pubDate>Fri, 16 Sep 2022 08:33:53 &#43;0800</pubDate>
-    <author>刘悦东</author>
+    <author>七兵堂</author>
     <guid>https://aftermorr0w.github.io/posts/%E6%9F%90%E7%BE%8A%E7%8E%A9%E6%B3%95_%E7%88%86%E7%A0%B4/</guid>
     <description><![CDATA[环境 唯一的难点其实就是抓包的问题，你会发现新版微信小程序用burp suite抓会漏包 用Proxifier将流量全都转给burp suite就好]]></description>
 </item>
@@ -66,7 +66,7 @@
     <title>对某傀儡机的提权操作</title>
     <link>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/</link>
     <pubDate>Tue, 13 Sep 2022 19:52:48 &#43;0800</pubDate>
-    <author>刘悦东</author>
+    <author>七兵堂</author>
     <guid>https://aftermorr0w.github.io/posts/%E5%AF%B9%E6%9F%90%E5%82%80%E5%84%A1%E6%9C%BA%E7%9A%84%E6%8F%90%E6%9D%83%E6%93%8D%E4%BD%9C/</guid>
     <description><![CDATA[前言 链接：https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascri]]></description>
 </item>
@@ -74,7 +74,7 @@
     <title>PDF写入javascript造成XSS</title>
     <link>https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</link>
     <pubDate>Sun, 03 Apr 2022 12:55:15 &#43;0800</pubDate>
-    <author>刘悦东</author>
+    <author>七兵堂</author>
     <guid>https://aftermorr0w.github.io/posts/pdf%E5%86%99%E5%85%A5javascript%E9%80%A0%E6%88%90xss/</guid>
     <description><![CDATA[前言 前几天了解了PDF XSS 感觉这是个特别有意思的知识点，确实XSS称霸漏洞排行榜前几以来，哪个不知道见框就插，把代码写入点写死或者加上过滤你就]]></description>
 </item>
