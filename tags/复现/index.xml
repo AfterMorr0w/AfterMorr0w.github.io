@@ -3,12 +3,12 @@
         <title>复现 - 标签 - AFTERMORR0W</title>
         <link>https://aftermorr0w.github.io/tags/%E5%A4%8D%E7%8E%B0/</link>
         <description>复现 - 标签 - AFTERMORR0W</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>get01d@hackerone.tech (七兵堂)</managingEditor>
-            <webMaster>get01d@hackerone.tech (七兵堂)</webMaster><lastBuildDate>Tue, 27 Sep 2022 14:49:43 &#43;0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/tags/%E5%A4%8D%E7%8E%B0/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>get01d@hackerone.tech (卯兔)</managingEditor>
+            <webMaster>get01d@hackerone.tech (卯兔)</webMaster><lastBuildDate>Tue, 27 Sep 2022 14:49:43 &#43;0800</lastBuildDate><atom:link href="https://aftermorr0w.github.io/tags/%E5%A4%8D%E7%8E%B0/" rel="self" type="application/rss+xml" /><item>
     <title>CVE-2022-39197(CobaltStrike XSS =4.7)</title>
     <link>https://aftermorr0w.github.io/posts/cve-2022-39197cobaltstrike-xss-4.7/</link>
     <pubDate>Tue, 27 Sep 2022 14:49:43 &#43;0800</pubDate>
-    <author>七兵堂</author>
+    <author>卯兔</author>
     <guid>https://aftermorr0w.github.io/posts/cve-2022-39197cobaltstrike-xss-4.7/</guid>
     <description><![CDATA[前言 最先是在某群里得到的消息，当时很后怕，因为近期我的木马频繁被传进沙箱里分析，还好马上在外网上就找到了相关的介绍还有一些项目地址 CS官方通]]></description>
 </item>
