@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>ChatGPT搭建wechat机器人 - AFTERMORR0W</title><meta name="Description" content="Get01d &#39;s blog"><meta property="og:title" content="ChatGPT搭建wechat机器人" />
+<meta property="og:description" content="介绍 ChatGPT是一种基于OpenAI GPT-3技术的聊天机器人。它使用GPT-3的机器学习模型，可以根据输入的文本，自动生成类似人类的自" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aftermorr0w.github.io/posts/chatgpt%E6%90%AD%E5%BB%BAwechat%E6%9C%BA%E5%99%A8%E4%BA%BA/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-30T10:26:40+08:00" />
+<meta property="article:modified_time" content="2022-09-30T10:26:40+08:00" /><meta property="og:site_name" content="AfterMorr0w" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ChatGPT搭建wechat机器人"/>
+<meta name="twitter:description" content="介绍 ChatGPT是一种基于OpenAI GPT-3技术的聊天机器人。它使用GPT-3的机器学习模型，可以根据输入的文本，自动生成类似人类的自"/>
+<meta name="application-name" content="AfterMorr0w">
+<meta name="apple-mobile-web-app-title" content="AfterMorr0w"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://aftermorr0w.github.io/posts/chatgpt%E6%90%AD%E5%BB%BAwechat%E6%9C%BA%E5%99%A8%E4%BA%BA/" /><link rel="prev" href="https://aftermorr0w.github.io/posts/%E5%9B%BD%E5%A4%96frp%E7%AB%99%E7%82%B9%E7%99%BD%E5%AB%96/" /><link rel="next" href="https://aftermorr0w.github.io/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ChatGPT搭建wechat机器人",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/aftermorr0w.github.io\/posts\/chatgpt%E6%90%AD%E5%BB%BAwechat%E6%9C%BA%E5%99%A8%E4%BA%BA\/"
+        },"genre": "posts","keywords": "开发","wordcount":  695 ,
+        "url": "https:\/\/aftermorr0w.github.io\/posts\/chatgpt%E6%90%AD%E5%BB%BAwechat%E6%9C%BA%E5%99%A8%E4%BA%BA\/","datePublished": "2022-09-30T10:26:40+08:00","dateModified": "2022-09-30T10:26:40+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "卯兔"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="AFTERMORR0W">AfterMorr0w</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 文章标签 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="AFTERMORR0W">AfterMorr0w</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">文章标签</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ChatGPT搭建wechat机器人</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>卯兔</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-30">2022-09-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 695 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><h1 id="介绍">介绍</h1>
+<p>ChatGPT是一种基于OpenAI GPT-3技术的聊天机器人。它使用GPT-3的机器学习模型，可以根据输入的文本，自动生成类似人类的自然语言回应。ChatGPT可以训练自己，更好地理解输入文本，并生成准确有效的回复。它也能够根据上下文，记住聊天会话中以前提到的内容，并为其生成回应。</p>
+<p>据媒体报道，微软投资的美国AI实验室OpenAI创始人兼CEO Sam Altman在社交媒体上宣布，其11月30日发布的聊天机器人(行情300024,诊股)模型ChatGPT，上线短短五天，用户已经突破了100万。目前，ChatGPT能接入微信了，有望带来海量用户。</p>
+<h1 id="申请openai接口">申请OpenAI接口</h1>
+<p>提前尝试的朋友估计都会卡在注册他说你所在的地区不支持
+起初我一直以为是注册的时候OpenAI的平台验证所在地的IP
+之后发现不是的，当第一次注册的时候即便他依然会说不支持，但其实已经将你账号生成好了，只不过加了不支持所在地的标签</p>
+<p>加了标签之后无论怎么魔法换代理都登不上</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1670849745276.png"
+        data-srcset="/images/1670849745276.png, /images/1670849745276.png 1.5x, /images/1670849745276.png 2x"
+        data-sizes="auto"
+        alt="/images/1670849745276.png"
+        title="/images/1670849745276.png" /></p>
+<p>所以换个邮箱账号，建议国外的比如谷歌、微软的邮箱
+用韩国、或者日本的全局代理，香港的好像不行
+如果还不行的话，关掉浏览器的会话，重新打开用隐私模式</p>
+<p><a href="https://beta.openai.com/signup" target="_blank" rel="noopener noreffer ">登录链接</a></p>
+<p>登上去之后，添加api就好了</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1670850297390.png"
+        data-srcset="/images/1670850297390.png, /images/1670850297390.png 1.5x, /images/1670850297390.png 2x"
+        data-sizes="auto"
+        alt="/images/1670850297390.png"
+        title="/images/1670850297390.png" /></p>
+<p>或者还有的搭建办法需要chat页面的token</p>
+<p><a href="https://chat.openai.com/chat" target="_blank" rel="noopener noreffer ">chat页面链接</a></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1670850636380.png"
+        data-srcset="/images/1670850636380.png, /images/1670850636380.png 1.5x, /images/1670850636380.png 2x"
+        data-sizes="auto"
+        alt="/images/1670850636380.png"
+        title="/images/1670850636380.png" /></p>
+<p>直接F12 application找到就好</p>
+<p>推荐的几个机器人项目
+这种机器人需要token
+<a href="https://github.com/malaohu/wechatbot" target="_blank" rel="noopener noreffer ">https://github.com/malaohu/wechatbot</a>
+这种需要api
+<a href="https://gitee.com/shtml/wechatbot/tree/main/bin" target="_blank" rel="noopener noreffer ">https://gitee.com/shtml/wechatbot/tree/main/bin</a></p>
+<p>这两个简单易操作
+提醒一下，想部署第一个机器人项目的看好对应的go版本，别下错了</p>
+<h1 id="部署服务器">部署服务器</h1>
+<p>直接选择最简单的第二种，
+先升一下权限</p>
+<pre tabindex="0"><code>chmod -R 777 wechatbot-amd64-linux
+</code></pre><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1670851368646.png"
+        data-srcset="/images/1670851368646.png, /images/1670851368646.png 1.5x, /images/1670851368646.png 2x"
+        data-sizes="auto"
+        alt="/images/1670851368646.png"
+        title="/images/1670851368646.png" />
+然后后台运行就行了</p>
+<pre tabindex="0"><code>nohup ./wechatbot-amd64-linux &amp;
+</code></pre><p>这时候会显示一个微信网页登录二维码的链接，用个小号登录就OK了</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/1670851561623.jpg"
+        data-srcset="/images/1670851561623.jpg, /images/1670851561623.jpg 1.5x, /images/1670851561623.jpg 2x"
+        data-sizes="auto"
+        alt="/images/1670851561623.jpg"
+        title="/images/1670851561623.jpg" /></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-09-30</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://aftermorr0w.github.io/posts/chatgpt%E6%90%AD%E5%BB%BAwechat%E6%9C%BA%E5%99%A8%E4%BA%BA/" data-title="ChatGPT搭建wechat机器人" data-hashtags="开发"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://aftermorr0w.github.io/posts/chatgpt%E6%90%AD%E5%BB%BAwechat%E6%9C%BA%E5%99%A8%E4%BA%BA/" data-hashtag="开发"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://aftermorr0w.github.io/posts/chatgpt%E6%90%AD%E5%BB%BAwechat%E6%9C%BA%E5%99%A8%E4%BA%BA/" data-title="ChatGPT搭建wechat机器人"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://aftermorr0w.github.io/posts/chatgpt%E6%90%AD%E5%BB%BAwechat%E6%9C%BA%E5%99%A8%E4%BA%BA/" data-title="ChatGPT搭建wechat机器人"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://aftermorr0w.github.io/posts/chatgpt%E6%90%AD%E5%BB%BAwechat%E6%9C%BA%E5%99%A8%E4%BA%BA/" data-title="ChatGPT搭建wechat机器人" data-ralateuid="7770279120"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E5%BC%80%E5%8F%91/">开发</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E5%9B%BD%E5%A4%96frp%E7%AB%99%E7%82%B9%E7%99%BD%E5%AB%96/" class="prev" rel="prev" title="国外frp站点白嫖"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>国外frp站点白嫖</a>
+            <a href="/posts/%E6%9C%A8%E9%A9%ACpython%E5%8F%8D%E6%B2%99%E7%AE%B1/" class="next" rel="next" title="木马(python)反沙箱">木马(python)反沙箱<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":30},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"Comment","lightTheme":"github-light","repo":"AfterMorr0w/AfterMorr0w.github.io"}}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
