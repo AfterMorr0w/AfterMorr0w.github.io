@@ -77,11 +77,17 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><h1 id="介绍">介绍</h1>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#申请openai接口">申请OpenAI接口</a></li>
+    <li><a href="#部署服务器">部署服务器</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="介绍">介绍</h2>
 <p>ChatGPT是一种基于OpenAI GPT-3技术的聊天机器人。它使用GPT-3的机器学习模型，可以根据输入的文本，自动生成类似人类的自然语言回应。ChatGPT可以训练自己，更好地理解输入文本，并生成准确有效的回复。它也能够根据上下文，记住聊天会话中以前提到的内容，并为其生成回应。</p>
 <p>据媒体报道，微软投资的美国AI实验室OpenAI创始人兼CEO Sam Altman在社交媒体上宣布，其11月30日发布的聊天机器人(行情300024,诊股)模型ChatGPT，上线短短五天，用户已经突破了100万。目前，ChatGPT能接入微信了，有望带来海量用户。</p>
-<h1 id="申请openai接口">申请OpenAI接口</h1>
+<h2 id="申请openai接口">申请OpenAI接口</h2>
 <p>提前尝试的朋友估计都会卡在注册他说你所在的地区不支持
 起初我一直以为是注册的时候OpenAI的平台验证所在地的IP
 之后发现不是的，当第一次注册的时候即便他依然会说不支持，但其实已经将你账号生成好了，只不过加了不支持所在地的标签</p>
@@ -125,7 +131,7 @@
 <a href="https://gitee.com/shtml/wechatbot/tree/main/bin" target="_blank" rel="noopener noreffer ">https://gitee.com/shtml/wechatbot/tree/main/bin</a></p>
 <p>这两个简单易操作
 提醒一下，想部署第一个机器人项目的看好对应的go版本，别下错了</p>
-<h1 id="部署服务器">部署服务器</h1>
+<h2 id="部署服务器">部署服务器</h2>
 <p>直接选择最简单的第二种，
 先升一下权限</p>
 <pre tabindex="0"><code>chmod -R 777 wechatbot-amd64-linux
